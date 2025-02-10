@@ -11,7 +11,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping()
-@CrossOrigin("http://localhost:5173/")
+@CrossOrigin("https://castilhos-h0nwhsaiq-felipenewplayers-projects.vercel.app/")
 public class BurguerController {
 
     private final BurguerService service;
