@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/burguer")
+@RequestMapping()
 @CrossOrigin("http://localhost:5173/")
 public class BurguerController {
 
