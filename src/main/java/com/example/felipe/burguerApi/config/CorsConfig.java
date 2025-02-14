@@ -14,7 +14,7 @@ public class CorsConfig {
     @Bean
     public CorsFilter corsFilter() {
         CorsConfiguration config = new CorsConfiguration();
-        config.setAllowedOrigins(List.of("https://castilhos-lta49ocml-felipenewplayers-projects.vercel.app/"));
+    config.setAllowedOrigins(List.of("https://castilhos-lta49ocml-felipenewplayers-projects.vercel.app", "https://castilhos-lta49ocml-felipenewplayers-projects.vercel.app/signUp"));
         config.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
         config.setAllowedHeaders(List.of("Authorization", "Content-Type"));
         config.setAllowCredentials(true); // Permite envio de cookies/autenticação
