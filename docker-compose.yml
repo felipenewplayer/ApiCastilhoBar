@@ -1,0 +1,39 @@
+
+services:
+  db:
+    image: mysql:8
+    container_name: db
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: ${DB_NAME}
+      MYSQL_USER: root
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+    ports:
+      - "3306:3306"
+    networks:
+      - minha-rede
+
+  app:
+    image: minha-imagem-springboot
+    container_name: app
+    environment:
+      DB_HOST: db
+      DB_PORT: 3306
+      DB_NAME: ${DB_NAME}
+      DB_USER: root
+      DB_PASSWORD: ${DB_PASSWORD}
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+    networks:
+      - minha-rede
+    # Se você adicionar retry logic no Spring Boot, pode usar o healthcheck aqui para garantir que o app só inicie quando o banco estiver pronto
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/actuator/health"]
+      interval: 30s
+      retries: 5
+
+networks:
+  minha-rede:
+    driver: bridge
