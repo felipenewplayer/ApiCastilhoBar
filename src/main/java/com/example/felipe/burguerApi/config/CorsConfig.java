@@ -14,7 +14,7 @@ public class CorsConfig {
     @Bean
     public CorsFilter corsFilter() {
         CorsConfiguration config = new CorsConfiguration();
-        config.setAllowedOrigins(List.of("https://castilhos-9k8g5x1g2-felipenewplayers-projects.vercel.app/","http://localhost:5173"));
+        config.setAllowedOrigins(List.of("https://castilhos-nhm9ebkg5-felipenewplayers-projects.vercel.app/","http://localhost:5173"));
         config.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
         config.setAllowedHeaders(List.of("Authorization", "Content-Type"));
         config.setAllowCredentials(true);
