@@ -3,7 +3,6 @@ package com.example.felipe.burguerApi.service;
 import com.example.felipe.burguerApi.model.Burguer;
 import org.springframework.stereotype.Service;
 
-import java.util.Arrays;
 import java.util.List;
 
 @Service
